@@ -302,7 +302,7 @@ with tab1:
         }
         return colores.get(val, "")
 
-    styled = display.style.applymap(color_alerta, subset=["Alerta"])
+    styled = display.style.map(color_alerta, subset=["Alerta"])
     st.dataframe(styled, use_container_width=True, hide_index=True, height=520)
 
 # TAB 2 — ACCIONES

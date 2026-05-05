@@ -326,7 +326,9 @@ with tab2:
             cols = st.columns([1.2, 2.5, 1.5, 1, 1, 1, 1, 3])
             cols[0].markdown(f"<span style='font-size:0.8rem;color:#334155'>{r['zona']}</span>", unsafe_allow_html=True)
             cols[1].markdown(f"<span style='font-size:0.82rem;font-weight:500;color:#0F172A'>{r['tienda']}</span><br><span style='font-size:0.75rem;color:#64748B'>{r['nombre_sku']}</span>", unsafe_allow_html=True)
-            cols[2].markdown(f"<span class='badge {BADGE.get(r[\"alerta\"],\"\")}'>{r['alerta']}</span>", unsafe_allow_html=True)
+            badge_class = BADGE.get(r["alerta"], "")
+            badge_label = r["alerta"]
+            cols[2].markdown(f"<span class='badge {badge_class}'>{badge_label}</span>", unsafe_allow_html=True)
             cols[3].markdown(f"<span style='font-size:0.9rem;font-family:DM Mono,monospace;color:#0F172A'>{r['venta']}</span>", unsafe_allow_html=True)
             cols[4].markdown(f"<span style='font-size:0.9rem;font-family:DM Mono,monospace;color:#0F172A'>{r['stock_tienda']}</span>", unsafe_allow_html=True)
             cols[5].markdown(f"<span style='font-size:0.9rem;font-family:DM Mono,monospace;color:#0F172A'>{r['stock_bodega']}</span>", unsafe_allow_html=True)
